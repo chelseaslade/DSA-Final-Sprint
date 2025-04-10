@@ -1,9 +1,6 @@
 package org.keyin;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class BSTEntity {
@@ -11,6 +8,8 @@ public class BSTEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String inputNumbers;
+
+    @Column(name = "tree_structure", columnDefinition = "TEXT")
     private String treeStructure;
 
     public BSTEntity() {}
