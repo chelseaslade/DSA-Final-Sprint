@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Previous Trees</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="Container">
+    <div class="Home">
+        <h1>Previous Trees</h1>
+        <div th:if="${#lists.isEmpty(trees)}">
+            <p>No trees stored yet.</p>
+            <a href="/"><button>Home</button></a>
+        </div>
+        <div th:if="${!#lists.isEmpty(trees)}">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Input Numbers</th>
+                    <th>Tree (JSON)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="tree : ${trees}">
+                    <td th:text="${tree.id}"></td>
+                    <td th:text="${tree.inputNumbers}"></td>
+                    <td>
+                        <pre th:text="${tree.treeStructure}"></pre>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="/"><button>Home</button></a>
+    </div>
+</div>
+    </div>
+</body>
+</html>

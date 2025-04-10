@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Numbers for BST</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="Container">
+    <div class="Home">
+        <h1>Generate Binary Search Tree</h1>
+<form action="/bst/process-numbers" method="post">
+    <label for="numbers">Enter numbers (separated by commas):</label><br>
+    <input type="text" id="numbers" name="numbers" placeholder="e.g. 2, 5, 1, 7, 11" required>
+    <button type="submit">Submit</button>
+</form>
+        <br>
+
+<form action="/bst/previous-trees" method="get">
+    <button type="submit">Show Previous Trees</button>
+</form>
+        <a href="/"><button>Home</button></a>
+    </div>
+</div>
+</body>
+</html>
