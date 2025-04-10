@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Tree</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="Container">
+    <div class="Home">
+    <h1>Generated Binary Search Tree</h1>
+    <p><strong>Input:</strong> <span th:text="${input}"></span></p>
+    <p><strong>Tree (JSON):</strong></p>
+    <pre th:text="${jsonTree}"></pre>
+    <a href="/bst/enter-numbers"><button>Create Another Tree</button></a>
+    <a href="/bst/previous-trees"><button>View Previous Trees</button></a>
+</div>
+</div>
+</body>
+</html>

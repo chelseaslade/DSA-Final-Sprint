@@ -3,7 +3,10 @@ package org.keyin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/bst")
@@ -19,13 +22,15 @@ public class BSTController {
     }
 
     @PostMapping("/process-numbers")
-    @ResponseBody
-    public ResponseEntity<String> processNumbers(@RequestParam String numbers) {
+    public String processNumbers(@RequestParam String numbers, Model model) {
         try {
             String jsonTree = bstService.buildAndStoreTree(numbers);
-            return ResponseEntity.ok(jsonTree);
+            model.addAttribute("jsonTree", jsonTree);
+            model.addAttribute("input", numbers);
+            return "process-numbers";
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Invalid input");
+            model.addAttribute("error", "Invalid input");
+            return "enter-numbers";
         }
     }
 
@@ -40,9 +45,9 @@ public class BSTController {
     }
 
     @GetMapping("/previous-trees")
-    public String getAllTrees() {
+    public String getAllTrees(Model model) {
+        List<BSTEntity> previousTrees = bstRepository.findAll();
+        model.addAttribute("trees", previousTrees);
         return "previous-trees";
     }
-
-
 }
