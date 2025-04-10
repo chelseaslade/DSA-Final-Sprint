@@ -22,7 +22,7 @@ public class BST {
         }
     }
 
-        public void insert(int value) {
+    public void insert(int value) {
             root = insertRec(root, value);
         }
 

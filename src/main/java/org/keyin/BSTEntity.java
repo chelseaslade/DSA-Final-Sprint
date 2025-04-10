@@ -19,7 +19,6 @@ public class BSTEntity {
         this.treeStructure = treeStructure;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
