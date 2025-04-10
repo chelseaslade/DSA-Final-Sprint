@@ -50,7 +50,14 @@ public class BST {
         root = null;
     }
 
-    //BST Methods
+    public Node getRoot() {
+        return root;
+    }
+
+    public int getRootValue() {
+        return root.value;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
