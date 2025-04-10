@@ -10,7 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Binary Search Tree - DSA Final Sprint");
         SpringApplication.run(Main.class, args);
     }
 }

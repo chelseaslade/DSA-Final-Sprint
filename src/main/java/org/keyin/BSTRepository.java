@@ -1,6 +1,8 @@
 package org.keyin;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface BSTRepository extends JpaRepository<BinarySearchTree, Long> {
+@Repository
+public interface BSTRepository extends JpaRepository<BSTEntity, Long> {
 }
