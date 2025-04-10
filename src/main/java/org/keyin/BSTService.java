@@ -21,8 +21,11 @@ public class BSTService {
     }
 
     public String buildAndStoreTree(String numberInput) {
+
         String[] parts = numberInput.split(",");
         BST bst = new BST();
+
+        bst.clear();
 
         for (String part : parts) {
             int number = Integer.parseInt(part.trim());

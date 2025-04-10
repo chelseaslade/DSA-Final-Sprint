@@ -46,6 +46,9 @@ public class BST {
                     nodeToJson(node.right));
         }
 
+    public void clear() {
+        root = null;
+    }
 
     //BST Methods
     public void setId(Long id) {
